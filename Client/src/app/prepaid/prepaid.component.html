@@ -1,0 +1,55 @@
+<mat-accordion class="example-headers-align ">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Recharge Details
+      </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>
+      <mat-form-field>
+        <mat-label>Mobile number</mat-label>
+        <span matPrefix>+91 &nbsp;</span>
+        <input matInput type="tel" placeholder="9876543210" required />
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <mat-label>Operator</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let operator of operators" [value]="operator">{{
+            operator
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <mat-label>State</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let state of states" [value]="state">{{
+            state
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <mat-action-row>
+      <button mat-button color="primary">
+        Recharge Now
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-grid-list cols="6" rowHeight="100px">
+  <mat-grid-tile [colspan]="6" [rowspan]="5">
+    Simple card
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="6" [rowspan]="5">
+    Simple card
+  </mat-grid-tile>
+</mat-grid-list>

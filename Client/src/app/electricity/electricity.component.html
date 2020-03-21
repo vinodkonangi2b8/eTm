@@ -1,0 +1,39 @@
+<div class="container m-5">
+  <h2>Pay for Electricity</h2>
+  <div>
+    <label>
+      <b>
+        <h4>Select Board:</h4>
+      </b></label
+    >
+    <mat-radio-group>
+      <mat-radio-button value="auto">Electricity Boards</mat-radio-button>
+      <mat-radio-button value="always">Apartments</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <p>
+    <mat-form-field>
+      <mat-label>Select Board</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let board of Boards" [value]="board">{{
+          board
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>State</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let state of states" [value]="state">{{
+          state
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <mat-action-row>
+    <button mat-raised-button color="primary" (click)="nextStep()">
+      Pay Now
+    </button>
+  </mat-action-row>
+</div>
